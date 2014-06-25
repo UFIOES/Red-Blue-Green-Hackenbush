@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2201BEE71953C1FF008D6C4B /* SLine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2201BEE61953C1FF008D6C4B /* SLine.mm */; };
+		22AF86F91953851500B3FC72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86F81953851500B3FC72 /* Foundation.framework */; };
+		22AF86FB1953851500B3FC72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86FA1953851500B3FC72 /* CoreGraphics.framework */; };
+		22AF86FD1953851500B3FC72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86FC1953851500B3FC72 /* UIKit.framework */; };
+		22AF87031953851500B3FC72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22AF87011953851500B3FC72 /* InfoPlist.strings */; };
+		22AF87051953851500B3FC72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87041953851500B3FC72 /* main.m */; };
+		22AF87091953851500B3FC72 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87081953851500B3FC72 /* SAppDelegate.m */; };
+		22AF870C1953851500B3FC72 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AF870A1953851500B3FC72 /* Main_iPhone.storyboard */; };
+		22AF870F1953851500B3FC72 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AF870D1953851500B3FC72 /* Main_iPad.storyboard */; };
+		22AF87121953851500B3FC72 /* SMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87111953851500B3FC72 /* SMainViewController.m */; };
+		22AF87151953851500B3FC72 /* SFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87141953851500B3FC72 /* SFlipsideViewController.m */; };
+		22AF87171953851500B3FC72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AF87161953851500B3FC72 /* Images.xcassets */; };
+		22AF871E1953851500B3FC72 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF871D1953851500B3FC72 /* XCTest.framework */; };
+		22AF871F1953851500B3FC72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86F81953851500B3FC72 /* Foundation.framework */; };
+		22AF87201953851500B3FC72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86FC1953851500B3FC72 /* UIKit.framework */; };
+		22AF87281953851500B3FC72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22AF87261953851500B3FC72 /* InfoPlist.strings */; };
+		22AF872A1953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87291953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m */; };
+		22AF873A1953900100B3FC72 /* SView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87391953900100B3FC72 /* SView.mm */; };
+		22CC9433195622D4005A7651 /* SNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22CC9432195622D4005A7651 /* SNode.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22AF87211953851500B3FC72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22AF86ED1953851500B3FC72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22AF86F41953851500B3FC72;
+			remoteInfo = "Red-Blue-Green Hackenbush";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2201BEE61953C1FF008D6C4B /* SLine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SLine.mm; sourceTree = "<group>"; };
+		2201BEE81953C210008D6C4B /* SLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLine.h; sourceTree = "<group>"; };
+		22AF86F51953851500B3FC72 /* Red-Blue-Green Hackenbush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red-Blue-Green Hackenbush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22AF86F81953851500B3FC72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22AF86FA1953851500B3FC72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22AF86FC1953851500B3FC72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22AF87001953851500B3FC72 /* Red-Blue-Green Hackenbush-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red-Blue-Green Hackenbush-Info.plist"; sourceTree = "<group>"; };
+		22AF87021953851500B3FC72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22AF87041953851500B3FC72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		22AF87061953851500B3FC72 /* Red-Blue-Green Hackenbush-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Red-Blue-Green Hackenbush-Prefix.pch"; sourceTree = "<group>"; };
+		22AF87071953851500B3FC72 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAppDelegate.h; sourceTree = "<group>"; };
+		22AF87081953851500B3FC72 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAppDelegate.m; sourceTree = "<group>"; };
+		22AF870B1953851500B3FC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		22AF870E1953851500B3FC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		22AF87101953851500B3FC72 /* SMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMainViewController.h; sourceTree = "<group>"; };
+		22AF87111953851500B3FC72 /* SMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMainViewController.m; sourceTree = "<group>"; };
+		22AF87131953851500B3FC72 /* SFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFlipsideViewController.h; sourceTree = "<group>"; };
+		22AF87141953851500B3FC72 /* SFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFlipsideViewController.m; sourceTree = "<group>"; };
+		22AF87161953851500B3FC72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22AF871C1953851500B3FC72 /* Red-Blue-Green HackenbushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Red-Blue-Green HackenbushTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22AF871D1953851500B3FC72 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		22AF87251953851500B3FC72 /* Red-Blue-Green HackenbushTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red-Blue-Green HackenbushTests-Info.plist"; sourceTree = "<group>"; };
+		22AF87271953851500B3FC72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22AF87291953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Red_Blue_Green_HackenbushTests.m; sourceTree = "<group>"; };
+		22AF87381953900100B3FC72 /* SView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SView.h; sourceTree = "<group>"; };
+		22AF87391953900100B3FC72 /* SView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SView.mm; sourceTree = "<group>"; };
+		22CC9431195622D4005A7651 /* SNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNode.h; sourceTree = "<group>"; };
+		22CC9432195622D4005A7651 /* SNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SNode.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22AF86F21953851500B3FC72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AF86FB1953851500B3FC72 /* CoreGraphics.framework in Frameworks */,
+				22AF86FD1953851500B3FC72 /* UIKit.framework in Frameworks */,
+				22AF86F91953851500B3FC72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22AF87191953851500B3FC72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AF871E1953851500B3FC72 /* XCTest.framework in Frameworks */,
+				22AF87201953851500B3FC72 /* UIKit.framework in Frameworks */,
+				22AF871F1953851500B3FC72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22AF86EC1953851500B3FC72 = {
+			isa = PBXGroup;
+			children = (
+				22AF86FE1953851500B3FC72 /* Red-Blue-Green Hackenbush */,
+				22AF87231953851500B3FC72 /* Red-Blue-Green HackenbushTests */,
+				22AF86F71953851500B3FC72 /* Frameworks */,
+				22AF86F61953851500B3FC72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22AF86F61953851500B3FC72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22AF86F51953851500B3FC72 /* Red-Blue-Green Hackenbush.app */,
+				22AF871C1953851500B3FC72 /* Red-Blue-Green HackenbushTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22AF86F71953851500B3FC72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22AF86F81953851500B3FC72 /* Foundation.framework */,
+				22AF86FA1953851500B3FC72 /* CoreGraphics.framework */,
+				22AF86FC1953851500B3FC72 /* UIKit.framework */,
+				22AF871D1953851500B3FC72 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22AF86FE1953851500B3FC72 /* Red-Blue-Green Hackenbush */ = {
+			isa = PBXGroup;
+			children = (
+				22AF87071953851500B3FC72 /* SAppDelegate.h */,
+				22AF87081953851500B3FC72 /* SAppDelegate.m */,
+				22AF87381953900100B3FC72 /* SView.h */,
+				22AF87391953900100B3FC72 /* SView.mm */,
+				22CC9431195622D4005A7651 /* SNode.h */,
+				22CC9432195622D4005A7651 /* SNode.mm */,
+				2201BEE81953C210008D6C4B /* SLine.h */,
+				2201BEE61953C1FF008D6C4B /* SLine.mm */,
+				22AF870A1953851500B3FC72 /* Main_iPhone.storyboard */,
+				22AF870D1953851500B3FC72 /* Main_iPad.storyboard */,
+				22AF87101953851500B3FC72 /* SMainViewController.h */,
+				22AF87111953851500B3FC72 /* SMainViewController.m */,
+				22AF87131953851500B3FC72 /* SFlipsideViewController.h */,
+				22AF87141953851500B3FC72 /* SFlipsideViewController.m */,
+				22AF87161953851500B3FC72 /* Images.xcassets */,
+				22AF86FF1953851500B3FC72 /* Supporting Files */,
+			);
+			path = "Red-Blue-Green Hackenbush";
+			sourceTree = "<group>";
+		};
+		22AF86FF1953851500B3FC72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22AF87001953851500B3FC72 /* Red-Blue-Green Hackenbush-Info.plist */,
+				22AF87011953851500B3FC72 /* InfoPlist.strings */,
+				22AF87041953851500B3FC72 /* main.m */,
+				22AF87061953851500B3FC72 /* Red-Blue-Green Hackenbush-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22AF87231953851500B3FC72 /* Red-Blue-Green HackenbushTests */ = {
+			isa = PBXGroup;
+			children = (
+				22AF87291953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m */,
+				22AF87241953851500B3FC72 /* Supporting Files */,
+			);
+			path = "Red-Blue-Green HackenbushTests";
+			sourceTree = "<group>";
+		};
+		22AF87241953851500B3FC72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22AF87251953851500B3FC72 /* Red-Blue-Green HackenbushTests-Info.plist */,
+				22AF87261953851500B3FC72 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22AF86F41953851500B3FC72 /* Red-Blue-Green Hackenbush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22AF872D1953851500B3FC72 /* Build configuration list for PBXNativeTarget "Red-Blue-Green Hackenbush" */;
+			buildPhases = (
+				22AF86F11953851500B3FC72 /* Sources */,
+				22AF86F21953851500B3FC72 /* Frameworks */,
+				22AF86F31953851500B3FC72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Red-Blue-Green Hackenbush";
+			productName = "Red-Blue-Green Hackenbush";
+			productReference = 22AF86F51953851500B3FC72 /* Red-Blue-Green Hackenbush.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22AF871B1953851500B3FC72 /* Red-Blue-Green HackenbushTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22AF87301953851500B3FC72 /* Build configuration list for PBXNativeTarget "Red-Blue-Green HackenbushTests" */;
+			buildPhases = (
+				22AF87181953851500B3FC72 /* Sources */,
+				22AF87191953851500B3FC72 /* Frameworks */,
+				22AF871A1953851500B3FC72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22AF87221953851500B3FC72 /* PBXTargetDependency */,
+			);
+			name = "Red-Blue-Green HackenbushTests";
+			productName = "Red-Blue-Green HackenbushTests";
+			productReference = 22AF871C1953851500B3FC72 /* Red-Blue-Green HackenbushTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22AF86ED1953851500B3FC72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = S;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Sam Carlson";
+				TargetAttributes = {
+					22AF871B1953851500B3FC72 = {
+						TestTargetID = 22AF86F41953851500B3FC72;
+					};
+				};
+			};
+			buildConfigurationList = 22AF86F01953851500B3FC72 /* Build configuration list for PBXProject "Red-Blue-Green Hackenbush" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22AF86EC1953851500B3FC72;
+			productRefGroup = 22AF86F61953851500B3FC72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22AF86F41953851500B3FC72 /* Red-Blue-Green Hackenbush */,
+				22AF871B1953851500B3FC72 /* Red-Blue-Green HackenbushTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22AF86F31953851500B3FC72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AF870F1953851500B3FC72 /* Main_iPad.storyboard in Resources */,
+				22AF87171953851500B3FC72 /* Images.xcassets in Resources */,
+				22AF870C1953851500B3FC72 /* Main_iPhone.storyboard in Resources */,
+				22AF87031953851500B3FC72 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22AF871A1953851500B3FC72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AF87281953851500B3FC72 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22AF86F11953851500B3FC72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AF873A1953900100B3FC72 /* SView.mm in Sources */,
+				22CC9433195622D4005A7651 /* SNode.mm in Sources */,
+				22AF87121953851500B3FC72 /* SMainViewController.m in Sources */,
+				22AF87091953851500B3FC72 /* SAppDelegate.m in Sources */,
+				2201BEE71953C1FF008D6C4B /* SLine.mm in Sources */,
+				22AF87151953851500B3FC72 /* SFlipsideViewController.m in Sources */,
+				22AF87051953851500B3FC72 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22AF87181953851500B3FC72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AF872A1953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22AF87221953851500B3FC72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22AF86F41953851500B3FC72 /* Red-Blue-Green Hackenbush */;
+			targetProxy = 22AF87211953851500B3FC72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22AF87011953851500B3FC72 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22AF87021953851500B3FC72 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		22AF870A1953851500B3FC72 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22AF870B1953851500B3FC72 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		22AF870D1953851500B3FC72 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22AF870E1953851500B3FC72 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		22AF87261953851500B3FC72 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22AF87271953851500B3FC72 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22AF872B1953851500B3FC72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22AF872C1953851500B3FC72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22AF872E1953851500B3FC72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Prefix.pch";
+				INFOPLIST_FILE = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		22AF872F1953851500B3FC72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Prefix.pch";
+				INFOPLIST_FILE = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		22AF87311953851500B3FC72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Red-Blue-Green Hackenbush.app/Red-Blue-Green Hackenbush";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Red-Blue-Green HackenbushTests/Red-Blue-Green HackenbushTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		22AF87321953851500B3FC72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Red-Blue-Green Hackenbush.app/Red-Blue-Green Hackenbush";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Prefix.pch";
+				INFOPLIST_FILE = "Red-Blue-Green HackenbushTests/Red-Blue-Green HackenbushTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22AF86F01953851500B3FC72 /* Build configuration list for PBXProject "Red-Blue-Green Hackenbush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22AF872B1953851500B3FC72 /* Debug */,
+				22AF872C1953851500B3FC72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22AF872D1953851500B3FC72 /* Build configuration list for PBXNativeTarget "Red-Blue-Green Hackenbush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22AF872E1953851500B3FC72 /* Debug */,
+				22AF872F1953851500B3FC72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22AF87301953851500B3FC72 /* Build configuration list for PBXNativeTarget "Red-Blue-Green HackenbushTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22AF87311953851500B3FC72 /* Debug */,
+				22AF87321953851500B3FC72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22AF86ED1953851500B3FC72 /* Project object */;
+}
