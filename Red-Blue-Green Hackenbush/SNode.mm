@@ -14,6 +14,9 @@
 
 @synthesize number;
 
+@synthesize numLinks;
+
+//Sets the node's number, used for checking connectivity to the ground
 - (void)setNumber:(int)n {
     
     if (!groundNode) {
@@ -24,6 +27,8 @@
     
 }
 
+
+//deprecated, use the class method makeWithPoint
 - (id)init {
     
     self = [super init];
@@ -36,18 +41,25 @@
     
 }
 
+//add a node to the array of links
 - (void)addLink:(SNode*)link {
+    
+    numLinks++;
     
     [links addObject:link];
     
 }
 
+//remove a node from the array of links
 - (void)removeLink:(SNode*)link {
+    
+    numLinks--;
     
     [links removeObject:link];
     
 }
 
+//used to recursively assign numbers to linked nodes, initiate call on ground nodes only, used to check connectivity to the ground
 - (void)assignNumbersToLinks {
     
     [links enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -66,6 +78,7 @@
     
 }
 
+//designate a ground node
 - (void)setGroundNode {
     
     groundNode = YES;
@@ -74,12 +87,14 @@
     
 }
 
+//check for being a ground node
 - (BOOL)isGroundNode {
     
     return groundNode;
     
 }
 
+//class constructor method
 + (id)makeWithPoint:(CGPoint)p {
     
     SNode* node = [super new];
@@ -89,6 +104,8 @@
     node->number = -1;
     
     node->links = [NSMutableArray array];
+    
+    node->numLinks = 0;
     
     return node;
     

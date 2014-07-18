@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AF86F41953851500B3FC72"
-               BuildableName = "Red-Blue-Green Hackenbush.app"
-               BlueprintName = "Red-Blue-Green Hackenbush"
-               ReferencedContainer = "container:Red-Blue-Green Hackenbush.xcodeproj">
+               BuildableName = "Hackenbush.app"
+               BlueprintName = "Hackenbush"
+               ReferencedContainer = "container:Hackenbush.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AF871B1953851500B3FC72"
-               BuildableName = "Red-Blue-Green HackenbushTests.xctest"
-               BlueprintName = "Red-Blue-Green HackenbushTests"
-               ReferencedContainer = "container:Red-Blue-Green Hackenbush.xcodeproj">
+               BuildableName = "HackenbushTests.xctest"
+               BlueprintName = "HackenbushTests"
+               ReferencedContainer = "container:Hackenbush.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AF86F41953851500B3FC72"
-            BuildableName = "Red-Blue-Green Hackenbush.app"
-            BlueprintName = "Red-Blue-Green Hackenbush"
-            ReferencedContainer = "container:Red-Blue-Green Hackenbush.xcodeproj">
+            BuildableName = "Hackenbush.app"
+            BlueprintName = "Hackenbush"
+            ReferencedContainer = "container:Hackenbush.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AF86F41953851500B3FC72"
-            BuildableName = "Red-Blue-Green Hackenbush.app"
-            BlueprintName = "Red-Blue-Green Hackenbush"
-            ReferencedContainer = "container:Red-Blue-Green Hackenbush.xcodeproj">
+            BuildableName = "Hackenbush.app"
+            BlueprintName = "Hackenbush"
+            ReferencedContainer = "container:Hackenbush.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -84,9 +84,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AF86F41953851500B3FC72"
-            BuildableName = "Red-Blue-Green Hackenbush.app"
-            BlueprintName = "Red-Blue-Green Hackenbush"
-            ReferencedContainer = "container:Red-Blue-Green Hackenbush.xcodeproj">
+            BuildableName = "Hackenbush.app"
+            BlueprintName = "Hackenbush"
+            ReferencedContainer = "container:Hackenbush.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

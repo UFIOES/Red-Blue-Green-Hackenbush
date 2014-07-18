@@ -18,11 +18,15 @@
     
     BOOL groundNode;
     
+    int numLinks;
+    
 }
 
 @property CGPoint point;
 
 @property (nonatomic) int number;
+
+@property (readonly) int numLinks;
 
 - (void)setNumber:(int)n;
 

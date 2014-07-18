@@ -16,6 +16,8 @@
 
 @synthesize editingMode;
 
+@synthesize nodeSnapRange;
+
 - (id)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
@@ -36,12 +38,15 @@
         
         editingMode = YES;
         
+        nodeSnapRange = 10.0f;
+        
     }
     
     return self;
     
 }
 
+//math method, tests two SLine's for an interection
 BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
     float x1 = l1.startNode.point.x, x2 = l1.endNode.point.x, x3 = l2.startNode.point.x, x4 = l2.endNode.point.x;
@@ -76,6 +81,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
 }
 
+//Cleans all of the arrays to dispose of nodes anf lines
 - (void)maximumDelete {
     
     lines = [NSMutableArray array];
@@ -88,6 +94,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
 }
 
+//Method called when someone touches the view
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     [super touchesBegan:touches withEvent:event];
@@ -97,9 +104,9 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
     while (value = [feeler nextObject]) {
         
-        CGPoint where = [value locationInView:self];
+        CGPoint where = [value locationInView:self]; //find where the touch is
         
-        newLineStartNode = [SNode makeWithPoint:where];
+        newLineStartNode = [SNode makeWithPoint:where]; //make a node for that point
         
         if (editingMode) {
             
@@ -112,7 +119,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
             float x1 = where.x;
             float y1 = where.y;
             
-            if (fabsf(y1 - ((self.frame.size.height * 7) / 8)) < 10.0f) {
+            if (fabsf(y1 - ((self.frame.size.height * 7) / 8)) < nodeSnapRange) { //if the node is within the node snap range of the ground line, put it on the ground line and make it a ground node
                 
                 y1 = (self.frame.size.height * 7) / 8;
                 
@@ -122,7 +129,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                 
             }
             
-            [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) {
+            [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) { //iterates through all of the nodes to chech if the new node if with in the node snap range of any node, if it is, use that node instead of the new node
                 
                 SNode* node = ((SNode*) obj);
                 
@@ -131,13 +138,13 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                 
                 float d = sqrtf((x1 - x2)*(x1 - x2) +( y1 - y2)*(y1 - y2));
                 
-                if (d < 10.0f) {
+                if (d < nodeSnapRange) {
                     
                     theNode = node;
                     
                     nearbyNode = YES;
                     
-                    *stop = YES;
+                    *stop = YES; //unlikely that someone will try to squeeze a node between two neerby nodes, most people do not have thin enough fingers to achieve this
                     
                 }
                 
@@ -147,7 +154,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                 
                 newLineStartNode = theNode;
                 
-            } else if (onGround) {
+            } else if (onGround) { //no need to set a pre-existing node to a ground node, it may not be on the ground
                 
                 [newLineStartNode setGroundNode];
                 
@@ -159,6 +166,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
 }
 
+//if something happens (push notification), that breaks a touch before it is done
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     
     [super touchesCancelled:touches withEvent:event];
@@ -173,6 +181,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
 }
 
+//Called when someone lifts their finger off of the screen, time to create the new end node
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
     [super touchesEnded:touches withEvent:event];
@@ -184,9 +193,9 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
     while (value = [feeler nextObject]) {
         
-        CGPoint where = [value locationInView:self];
+        CGPoint where = [value locationInView:self]; //find where the touch is
         
-        newLineEndNode = [SNode makeWithPoint:where];
+        newLineEndNode = [SNode makeWithPoint:where]; //make a node for that point
         
         if (editingMode) {
             
@@ -199,7 +208,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
             float x1 = where.x;
             float y1 = where.y;
             
-            if (fabsf(y1 - ((self.frame.size.height * 7) / 8)) < 10.0f) {
+            if (fabsf(y1 - ((self.frame.size.height * 7) / 8)) < nodeSnapRange) { //if the node is within the node snap range of the ground line, put it on the ground line and make it a ground node
                 
                 y1 = (self.frame.size.height * 7) / 8;
                 
@@ -209,7 +218,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                 
             }
             
-            [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) {
+            [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) { //iterates through all of the nodes to chech if the new node if with in the node snap range of any node, if it is, use that node
                 
                 SNode* node = ((SNode*) obj);
                 
@@ -218,13 +227,13 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                 
                 float d = sqrtf((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
                 
-                if (d < 10.0f) {
+                if (d < nodeSnapRange) {
                     
                     theNode = node;
                     
                     nearbyNode = YES;
                     
-                    *stop = YES;
+                    *stop = YES; //unlikely that someone will try to squeeze a node between two neerby nodes, most people do not have thin enough fingers to achieve this
                     
                 }
                 
@@ -234,7 +243,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                 
                 newLineEndNode = theNode;
                 
-            } else if (onGround) {
+            } else if (onGround) { //no need to set a pre-existing node to a ground node, it may not be on the ground
                 
                 [newLineEndNode setGroundNode];
                 
@@ -248,7 +257,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
             
             float d = sqrtf((startX - endX)*(startX - endX) + (startY - endY)*(startY - endY));
             
-            if (d < 10.0f) {
+            if (d < nodeSnapRange) { //tests if the new nodes are within the the node snap range of each other, if they are, there will be problems (the math may have of may in the future consider them the same point, making a line with no length), so we must cancel the new line
                 
                 fail = YES;
                 
@@ -258,13 +267,14 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
         
     }
     
-    if (editingMode && !fail) {
+    if (editingMode && !fail) { //if we are making a new line...
         
+        //test that our nodes are new before adding them to the arrays
         BOOL startNodeIsNew = ![allNodes containsObject:newLineStartNode];
         
         BOOL endNodeIsNew = ![allNodes containsObject:newLineEndNode];
         
-        if (startNodeIsNew) {
+        if (startNodeIsNew) { //add the start node to appliciable arrays
             
             [allNodes addObject:newLineStartNode];
             
@@ -276,7 +286,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
             
         }
         
-        if (endNodeIsNew) {
+        if (endNodeIsNew) { //add the end node to appliciable arrays
             
             [allNodes addObject:newLineEndNode];
             
@@ -288,29 +298,32 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
             
         }
         
+        //link the new nodes
         [newLineStartNode addLink:newLineEndNode];
         [newLineEndNode addLink:newLineStartNode];
         
-        [lines addObject:[SLine makeWithColor:color startNode:newLineStartNode endNode:newLineEndNode]];
+        [lines addObject:[SLine makeWithColor:color startNode:newLineStartNode endNode:newLineEndNode]]; //make the newe line
         
-    } else {
+    } else { //we might be cutting a line
         
+        //make the line
         SLine* line1 = [SLine makeWithColor:color
                                  startNode: newLineStartNode
                                    endNode: newLineEndNode];
         
-        [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) {
+        [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) { //enumerate all lines
             
             SLine* line2 = ((SLine*) obj);
             
-            if (lineSegmentsIntersect(line1, line2)) {
+            if (lineSegmentsIntersect(line1, line2)) { //test for an intersection
                 
-                if (childishMode) {
+                if (childishMode) { //if we are in childish mode we cannot 'drop' any lines
                     
+                    //removing (cutting) the link between the nodes, to test what the new structure will be like
                     [line2.startNode removeLink:line2.endNode];
                     [line2.endNode removeLink:line2.startNode];
                     
-                    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //prepare to test ground connectivity by setting all non-ground nodes to -1
                         
                         SNode* node = ((SNode*) obj);
                         
@@ -318,7 +331,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                         
                     }];
                     
-                    [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //tell the ground nodes to start assigning numbers to all connected nodes
                         
                         SNode* node = ((SNode*) obj);
                         
@@ -328,7 +341,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                     
                     NSMutableArray* __block deadNodes = [NSMutableArray arrayWithCapacity:allNodes.count];
                     
-                    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //if there are any nodes still with -1, they must not connect to the ground, they are dead
                         
                         SNode* node = ((SNode*) obj);
                         
@@ -342,7 +355,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                     
                     NSMutableArray* __block deadLines = [NSMutableArray array];
                     
-                    [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //any line that contains a dead node is a dead line
                         
                         SLine* line = ((SLine*) obj);
                         
@@ -354,12 +367,12 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                         
                     }];
                     
-                    if (deadLines.count > 1) {
+                    if (deadLines.count > 1) { //test to make sure we are not droping any lines, if so re-add the link and cancel the cut
                         
                         [line2.startNode addLink:line2.endNode];
                         [line2.endNode addLink:line2.startNode];
                         
-                    } else {
+                    } else { //only one line is being cut, time to cut it
                         
                         [deadLines addObject:line2];
                         
@@ -377,12 +390,13 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                         
                     }
                     
-                } else {
+                } else { //we are not in childish mode, so we can droop lines
                     
+                    //removing (cutting) the link between the nodes, to test what the new structure will be like
                     [line2.startNode removeLink:line2.endNode];
                     [line2.endNode removeLink:line2.startNode];
                     
-                    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //prepare to test ground connectivity by setting all non-ground nodes to -1
                         
                         SNode* node = ((SNode*) obj);
                         
@@ -390,7 +404,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                         
                     }];
                     
-                    [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //tell the ground nodes to start assigning numbers to all connected nodes
                         
                         SNode* node = ((SNode*) obj);
                         
@@ -400,7 +414,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                     
                     NSMutableArray* __block deadNodes = [NSMutableArray arrayWithCapacity:allNodes.count];
                     
-                    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //if there are any nodes still with -1, they must not connect to the ground, they are dead
                         
                         SNode* node = ((SNode*) obj);
                         
@@ -412,9 +426,15 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                         
                     }];
                     
-                    [deadNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //check for dead ground nodes, as they allways have connectivity to the ground and are only are destroyed by having all connecting lines cut
                         
-                        [allNodes removeObject:obj];
+                        SNode* node = ((SNode*) obj);
+                        
+                        if (node.numLinks == 0) {
+                            
+                            [deadNodes addObject:obj];
+                            
+                        }
                         
                     }];
                     
@@ -422,7 +442,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                     
                     [deadLines addObject:line2];
                     
-                    [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //any line that contains a dead node is a dead line
                         
                         SLine* line = ((SLine*) obj);
                         
@@ -434,7 +454,13 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                         
                     }];
                     
-                    [deadLines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [deadNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //delete all dead nodes
+                        
+                        [allNodes removeObject:obj];
+                        
+                    }];
+                    
+                    [deadLines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //finally we delete the dead lines
                         
                         [lines removeObject:obj];
                         
@@ -442,7 +468,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
                     
                 }
                 
-                *stop = YES;
+                *stop = YES; //any additional intersections will be ignored, you can only cut one line at a time
                 
             }
             
@@ -456,6 +482,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
 }
 
+//when the touch moves, we must move the line for it to make sense to the user
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
     [super touchesMoved:touches withEvent:event];
@@ -468,7 +495,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
         CGPoint where = [value locationInView:self];
         
         newLineEndNode = [SNode makeWithPoint:where];
-        /*
+        /* there is no need to do any math on the new node, it it will be the final one, it will be created in touchesEnded
         if (editingMode) {
             
             BOOL __block nearbyNode = NO;
@@ -525,13 +552,14 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
 }
 
+//rendering code
 - (void)drawRect:(CGRect)rect {
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSaveGState(context);
     
-    [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) {
+    [lines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) { //enumerate through and draw all of the lines
         
         SLine* line = ((SLine*) obj);
         
@@ -559,7 +587,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
         
     }];
     
-    if (drawingNewLine) {
+    if (drawingNewLine) { //draw the line currently being created
         
         UIBezierPath* path = [UIBezierPath bezierPath];
         
@@ -587,6 +615,7 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
         
     }
     
+    //draw the ground line
     UIBezierPath* path = [UIBezierPath bezierPath];
     
     [path moveToPoint:CGPointMake(0, (self.frame.size.height * 7) / 8)];
@@ -598,6 +627,35 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     [path stroke];
     
     CGContextRestoreGState(context);
+    
+    //draw the nodes
+    [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        SNode* node = (SNode*) obj;
+        
+        float x = node.point.x;
+        
+        float y = node.point.y;
+        
+        float size;
+        
+        [[UIColor whiteColor] setStroke];
+        
+        if (editingMode) {
+            
+            size = nodeSnapRange;
+            
+        } else {
+            
+            size = 8.0f;
+            
+        }
+        
+        UIBezierPath* circle = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(x - size/2.0f, y - size/2.0f, size, size)];
+        
+        [circle strokeWithBlendMode:kCGBlendModeLuminosity alpha:0.45f];
+        
+    }];
     
 }
 

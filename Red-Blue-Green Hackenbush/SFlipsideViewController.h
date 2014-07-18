@@ -26,6 +26,8 @@
 
 - (void)retrieveState:(id)receiver;
 
+- (void)changeSnapRange:(float)value;
+
 @end
 
 @interface SFlipsideViewController : UIViewController
@@ -38,8 +40,10 @@
 
 @property (strong, nonatomic) IBOutlet UISwitch *childishMode;
 
+@property (strong, nonatomic) IBOutlet UISlider *snapRange;
+
 - (IBAction)done:(UISegmentedControl*)sender;
 
-- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish;
+- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange;
 
 @end

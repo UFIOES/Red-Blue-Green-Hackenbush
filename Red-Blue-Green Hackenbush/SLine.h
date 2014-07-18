@@ -10,6 +10,7 @@
 
 #import "SNode.h"
 
+//Used to define the color of lines
 typedef enum : NSUInteger {
     blue,
     red,

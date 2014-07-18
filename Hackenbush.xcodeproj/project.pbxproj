@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2201BEE71953C1FF008D6C4B /* SLine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2201BEE61953C1FF008D6C4B /* SLine.mm */; };
+		2283E4C01979626400E30F2F /* SMath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2283E4BF1979626400E30F2F /* SMath.mm */; };
+		2283E4C3197962A600E30F2F /* SSurreal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2283E4C2197962A600E30F2F /* SSurreal.mm */; };
 		22AF86F91953851500B3FC72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86F81953851500B3FC72 /* Foundation.framework */; };
 		22AF86FB1953851500B3FC72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86FA1953851500B3FC72 /* CoreGraphics.framework */; };
 		22AF86FD1953851500B3FC72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86FC1953851500B3FC72 /* UIKit.framework */; };
@@ -23,7 +25,7 @@
 		22AF871F1953851500B3FC72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86F81953851500B3FC72 /* Foundation.framework */; };
 		22AF87201953851500B3FC72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86FC1953851500B3FC72 /* UIKit.framework */; };
 		22AF87281953851500B3FC72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22AF87261953851500B3FC72 /* InfoPlist.strings */; };
-		22AF872A1953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87291953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m */; };
+		22AF872A1953851500B3FC72 /* HackenbushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87291953851500B3FC72 /* HackenbushTests.m */; };
 		22AF873A1953900100B3FC72 /* SView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87391953900100B3FC72 /* SView.mm */; };
 		22CC9433195622D4005A7651 /* SNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22CC9432195622D4005A7651 /* SNode.mm */; };
 /* End PBXBuildFile section */
@@ -41,14 +43,18 @@
 /* Begin PBXFileReference section */
 		2201BEE61953C1FF008D6C4B /* SLine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SLine.mm; sourceTree = "<group>"; };
 		2201BEE81953C210008D6C4B /* SLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLine.h; sourceTree = "<group>"; };
-		22AF86F51953851500B3FC72 /* Red-Blue-Green Hackenbush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red-Blue-Green Hackenbush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2283E4BE1979626400E30F2F /* SMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMath.h; sourceTree = "<group>"; };
+		2283E4BF1979626400E30F2F /* SMath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SMath.mm; sourceTree = "<group>"; };
+		2283E4C1197962A600E30F2F /* SSurreal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSurreal.h; sourceTree = "<group>"; };
+		2283E4C2197962A600E30F2F /* SSurreal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SSurreal.mm; sourceTree = "<group>"; };
+		22AF86F51953851500B3FC72 /* Hackenbush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackenbush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AF86F81953851500B3FC72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22AF86FA1953851500B3FC72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		22AF86FC1953851500B3FC72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		22AF87001953851500B3FC72 /* Red-Blue-Green Hackenbush-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red-Blue-Green Hackenbush-Info.plist"; sourceTree = "<group>"; };
+		22AF87001953851500B3FC72 /* Hackenbush-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hackenbush-Info.plist"; sourceTree = "<group>"; };
 		22AF87021953851500B3FC72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22AF87041953851500B3FC72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		22AF87061953851500B3FC72 /* Red-Blue-Green Hackenbush-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Red-Blue-Green Hackenbush-Prefix.pch"; sourceTree = "<group>"; };
+		22AF87061953851500B3FC72 /* Hackenbush-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackenbush-Prefix.pch"; sourceTree = "<group>"; };
 		22AF87071953851500B3FC72 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAppDelegate.h; sourceTree = "<group>"; };
 		22AF87081953851500B3FC72 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAppDelegate.m; sourceTree = "<group>"; };
 		22AF870B1953851500B3FC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -58,11 +64,11 @@
 		22AF87131953851500B3FC72 /* SFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFlipsideViewController.h; sourceTree = "<group>"; };
 		22AF87141953851500B3FC72 /* SFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFlipsideViewController.m; sourceTree = "<group>"; };
 		22AF87161953851500B3FC72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		22AF871C1953851500B3FC72 /* Red-Blue-Green HackenbushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Red-Blue-Green HackenbushTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22AF871C1953851500B3FC72 /* HackenbushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackenbushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AF871D1953851500B3FC72 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		22AF87251953851500B3FC72 /* Red-Blue-Green HackenbushTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Red-Blue-Green HackenbushTests-Info.plist"; sourceTree = "<group>"; };
 		22AF87271953851500B3FC72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		22AF87291953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Red_Blue_Green_HackenbushTests.m; sourceTree = "<group>"; };
+		22AF87291953851500B3FC72 /* HackenbushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackenbushTests.m; sourceTree = "<group>"; };
 		22AF87381953900100B3FC72 /* SView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SView.h; sourceTree = "<group>"; };
 		22AF87391953900100B3FC72 /* SView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SView.mm; sourceTree = "<group>"; };
 		22CC9431195622D4005A7651 /* SNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNode.h; sourceTree = "<group>"; };
@@ -96,8 +102,8 @@
 		22AF86EC1953851500B3FC72 = {
 			isa = PBXGroup;
 			children = (
-				22AF86FE1953851500B3FC72 /* Red-Blue-Green Hackenbush */,
-				22AF87231953851500B3FC72 /* Red-Blue-Green HackenbushTests */,
+				22AF86FE1953851500B3FC72 /* Hackenbush */,
+				22AF87231953851500B3FC72 /* HackenbushTests */,
 				22AF86F71953851500B3FC72 /* Frameworks */,
 				22AF86F61953851500B3FC72 /* Products */,
 			);
@@ -106,8 +112,8 @@
 		22AF86F61953851500B3FC72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22AF86F51953851500B3FC72 /* Red-Blue-Green Hackenbush.app */,
-				22AF871C1953851500B3FC72 /* Red-Blue-Green HackenbushTests.xctest */,
+				22AF86F51953851500B3FC72 /* Hackenbush.app */,
+				22AF871C1953851500B3FC72 /* HackenbushTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,12 +129,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		22AF86FE1953851500B3FC72 /* Red-Blue-Green Hackenbush */ = {
+		22AF86FE1953851500B3FC72 /* Hackenbush */ = {
 			isa = PBXGroup;
 			children = (
 				22AF87071953851500B3FC72 /* SAppDelegate.h */,
 				22AF87081953851500B3FC72 /* SAppDelegate.m */,
+				2283E4BE1979626400E30F2F /* SMath.h */,
+				2283E4BF1979626400E30F2F /* SMath.mm */,
 				22AF87381953900100B3FC72 /* SView.h */,
+				2283E4C1197962A600E30F2F /* SSurreal.h */,
+				2283E4C2197962A600E30F2F /* SSurreal.mm */,
 				22AF87391953900100B3FC72 /* SView.mm */,
 				22CC9431195622D4005A7651 /* SNode.h */,
 				22CC9432195622D4005A7651 /* SNode.mm */,
@@ -143,26 +153,28 @@
 				22AF87161953851500B3FC72 /* Images.xcassets */,
 				22AF86FF1953851500B3FC72 /* Supporting Files */,
 			);
+			name = Hackenbush;
 			path = "Red-Blue-Green Hackenbush";
 			sourceTree = "<group>";
 		};
 		22AF86FF1953851500B3FC72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				22AF87001953851500B3FC72 /* Red-Blue-Green Hackenbush-Info.plist */,
+				22AF87001953851500B3FC72 /* Hackenbush-Info.plist */,
 				22AF87011953851500B3FC72 /* InfoPlist.strings */,
 				22AF87041953851500B3FC72 /* main.m */,
-				22AF87061953851500B3FC72 /* Red-Blue-Green Hackenbush-Prefix.pch */,
+				22AF87061953851500B3FC72 /* Hackenbush-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		22AF87231953851500B3FC72 /* Red-Blue-Green HackenbushTests */ = {
+		22AF87231953851500B3FC72 /* HackenbushTests */ = {
 			isa = PBXGroup;
 			children = (
-				22AF87291953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m */,
+				22AF87291953851500B3FC72 /* HackenbushTests.m */,
 				22AF87241953851500B3FC72 /* Supporting Files */,
 			);
+			name = HackenbushTests;
 			path = "Red-Blue-Green HackenbushTests";
 			sourceTree = "<group>";
 		};
@@ -178,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22AF86F41953851500B3FC72 /* Red-Blue-Green Hackenbush */ = {
+		22AF86F41953851500B3FC72 /* Hackenbush */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22AF872D1953851500B3FC72 /* Build configuration list for PBXNativeTarget "Red-Blue-Green Hackenbush" */;
+			buildConfigurationList = 22AF872D1953851500B3FC72 /* Build configuration list for PBXNativeTarget "Hackenbush" */;
 			buildPhases = (
 				22AF86F11953851500B3FC72 /* Sources */,
 				22AF86F21953851500B3FC72 /* Frameworks */,
@@ -190,14 +202,14 @@
 			);
 			dependencies = (
 			);
-			name = "Red-Blue-Green Hackenbush";
+			name = Hackenbush;
 			productName = "Red-Blue-Green Hackenbush";
-			productReference = 22AF86F51953851500B3FC72 /* Red-Blue-Green Hackenbush.app */;
+			productReference = 22AF86F51953851500B3FC72 /* Hackenbush.app */;
 			productType = "com.apple.product-type.application";
 		};
-		22AF871B1953851500B3FC72 /* Red-Blue-Green HackenbushTests */ = {
+		22AF871B1953851500B3FC72 /* HackenbushTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22AF87301953851500B3FC72 /* Build configuration list for PBXNativeTarget "Red-Blue-Green HackenbushTests" */;
+			buildConfigurationList = 22AF87301953851500B3FC72 /* Build configuration list for PBXNativeTarget "HackenbushTests" */;
 			buildPhases = (
 				22AF87181953851500B3FC72 /* Sources */,
 				22AF87191953851500B3FC72 /* Frameworks */,
@@ -208,9 +220,9 @@
 			dependencies = (
 				22AF87221953851500B3FC72 /* PBXTargetDependency */,
 			);
-			name = "Red-Blue-Green HackenbushTests";
+			name = HackenbushTests;
 			productName = "Red-Blue-Green HackenbushTests";
-			productReference = 22AF871C1953851500B3FC72 /* Red-Blue-Green HackenbushTests.xctest */;
+			productReference = 22AF871C1953851500B3FC72 /* HackenbushTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +240,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 22AF86F01953851500B3FC72 /* Build configuration list for PBXProject "Red-Blue-Green Hackenbush" */;
+			buildConfigurationList = 22AF86F01953851500B3FC72 /* Build configuration list for PBXProject "Hackenbush" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -241,8 +253,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22AF86F41953851500B3FC72 /* Red-Blue-Green Hackenbush */,
-				22AF871B1953851500B3FC72 /* Red-Blue-Green HackenbushTests */,
+				22AF86F41953851500B3FC72 /* Hackenbush */,
+				22AF871B1953851500B3FC72 /* HackenbushTests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +291,8 @@
 				22AF87121953851500B3FC72 /* SMainViewController.m in Sources */,
 				22AF87091953851500B3FC72 /* SAppDelegate.m in Sources */,
 				2201BEE71953C1FF008D6C4B /* SLine.mm in Sources */,
+				2283E4C01979626400E30F2F /* SMath.mm in Sources */,
+				2283E4C3197962A600E30F2F /* SSurreal.mm in Sources */,
 				22AF87151953851500B3FC72 /* SFlipsideViewController.m in Sources */,
 				22AF87051953851500B3FC72 /* main.m in Sources */,
 			);
@@ -288,7 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AF872A1953851500B3FC72 /* Red_Blue_Green_HackenbushTests.m in Sources */,
+				22AF872A1953851500B3FC72 /* HackenbushTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +311,7 @@
 /* Begin PBXTargetDependency section */
 		22AF87221953851500B3FC72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 22AF86F41953851500B3FC72 /* Red-Blue-Green Hackenbush */;
+			target = 22AF86F41953851500B3FC72 /* Hackenbush */;
 			targetProxy = 22AF87211953851500B3FC72 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -419,9 +433,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Prefix.pch";
-				INFOPLIST_FILE = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Hackenbush-Prefix.pch";
+				INFOPLIST_FILE = "Red-Blue-Green Hackenbush/Hackenbush-Info.plist";
+				PRODUCT_NAME = Hackenbush;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -434,9 +448,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Prefix.pch";
-				INFOPLIST_FILE = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Hackenbush-Prefix.pch";
+				INFOPLIST_FILE = "Red-Blue-Green Hackenbush/Hackenbush-Info.plist";
+				PRODUCT_NAME = Hackenbush;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -458,7 +472,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Red-Blue-Green HackenbushTests/Red-Blue-Green HackenbushTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HackenbushTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -476,7 +490,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Red-Blue-Green Hackenbush/Red-Blue-Green Hackenbush-Prefix.pch";
 				INFOPLIST_FILE = "Red-Blue-Green HackenbushTests/Red-Blue-Green HackenbushTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HackenbushTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -485,7 +499,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22AF86F01953851500B3FC72 /* Build configuration list for PBXProject "Red-Blue-Green Hackenbush" */ = {
+		22AF86F01953851500B3FC72 /* Build configuration list for PBXProject "Hackenbush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22AF872B1953851500B3FC72 /* Debug */,
@@ -494,7 +508,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22AF872D1953851500B3FC72 /* Build configuration list for PBXNativeTarget "Red-Blue-Green Hackenbush" */ = {
+		22AF872D1953851500B3FC72 /* Build configuration list for PBXNativeTarget "Hackenbush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22AF872E1953851500B3FC72 /* Debug */,
@@ -503,7 +517,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22AF87301953851500B3FC72 /* Build configuration list for PBXNativeTarget "Red-Blue-Green HackenbushTests" */ = {
+		22AF87301953851500B3FC72 /* Build configuration list for PBXNativeTarget "HackenbushTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22AF87311953851500B3FC72 /* Debug */,

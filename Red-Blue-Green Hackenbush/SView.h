@@ -32,6 +32,8 @@
     
     BOOL editingMode;
     
+    float nodeSnapRange;
+    
 }
 
 @property lineColor color;
@@ -39,6 +41,8 @@
 @property BOOL childishMode;
 
 @property BOOL editingMode;
+
+@property float nodeSnapRange;
 
 - (id)initWithFrame:(CGRect)frame;
 

@@ -16,6 +16,7 @@
 
 @synthesize color;
 
+//class constructor method
 + (id)makeWithColor:(lineColor)c startNode:(SNode*)n1 endNode:(SNode*)n2 {
     
     SLine* line = [super new];
