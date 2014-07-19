@@ -111,7 +111,9 @@
     
     float snapRange = self.view.nodeSnapRange;
     
-    [receiver restoreStateWithColor:color editingMode:editing childishMode:childish nodeSnapRange:snapRange];
+    double value = [self.view findValue];
+    
+    [receiver restoreStateWithColor:color editingMode:editing childishMode:childish nodeSnapRange:snapRange outputValue:value];
     
 }
 

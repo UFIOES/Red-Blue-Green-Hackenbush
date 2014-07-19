@@ -29,7 +29,7 @@
 }
 
 //used to make sure the settings pane defaults to the correct state instead of the default
-- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange {
+- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange outputValue:(double)value {
     
     _colorControl.selectedSegmentIndex = color;
     
@@ -38,6 +38,22 @@
     [_childishMode setOn:childish];
     
     [_snapRange setValue:snapRange];
+    
+    NSString* string = [NSString stringWithFormat:@"%.*f", 12, value];
+    
+    unsigned long i = string.length - 1;
+    
+    while (YES) {
+        
+        if ([string characterAtIndex:i] != '0') break;
+        
+        i--;
+        
+    }
+    
+    string = [string substringToIndex:i+1];
+    
+    [_output setText:string];
     
 }
 

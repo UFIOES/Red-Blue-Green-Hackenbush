@@ -296,11 +296,112 @@ Nimber simplestNimber(Nimber leftNimber, Nimber rightNimber) {
                 
                 return hasValue = YES;
                 
+            } else if (leftChampion.value == rightChampion.value) {
+                
+                value = leftChampion.value + Nimber::makeNimber(0, 1, 0);
+                
+                return hasValue = YES;
+                
+            }
+            
+        } else if (leftChampions.count == rightChampions.count) {
+            
+            BOOL same = YES;
+            
+            [leftChampions sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                
+                SSurreal* surreal1 = (SSurreal*) obj1;
+                SSurreal* surreal2 = (SSurreal*) obj2;
+                
+                if (surreal1.value.getStar() < surreal2.value.getStar()) {
+                    
+                    return (NSComparisonResult) NSOrderedAscending;
+                    
+                } else if (surreal1.value.getStar() > surreal2.value.getStar()) {
+                    
+                    return (NSComparisonResult) NSOrderedDescending;
+                    
+                }
+                
+                return (NSComparisonResult) NSOrderedSame;
+                
+            }];
+            
+            [rightChampions sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                
+                SSurreal* surreal1 = (SSurreal*) obj1;
+                SSurreal* surreal2 = (SSurreal*) obj2;
+                
+                if (surreal1.value.getStar() < surreal2.value.getStar()) {
+                    
+                    return (NSComparisonResult) NSOrderedAscending;
+                    
+                } else if (surreal1.value.getStar() > surreal2.value.getStar()) {
+                    
+                    return (NSComparisonResult) NSOrderedDescending;
+                    
+                }
+                
+                return (NSComparisonResult) NSOrderedSame;
+                
+            }];
+            
+            for (int i=0; i < leftChampions.count; i++) {
+                
+                if (!(((SSurreal*)[leftChampions objectAtIndex:i]).value == ((SSurreal*)[rightChampions objectAtIndex:i]).value)) {
+                    
+                    same = NO;
+                    break;
+                    
+                }
+                
+                if (((SSurreal*)[leftChampions objectAtIndex:i]).value.getBigStar() != 0 || ((SSurreal*)[leftChampions objectAtIndex:i]).value.getReal() != 0) {
+                    
+                    same = NO;
+                    break;
+                    
+                }
+                
+                if (((SSurreal*)[rightChampions objectAtIndex:i]).value.getBigStar() != 0 || ((SSurreal*)[rightChampions objectAtIndex:i]).value.getReal() != 0) {
+                    
+                    same = NO;
+                    break;
+                    
+                }
+                
+            }
+            
+            if (same) {
+                
+                unsigned int lastStar = -1;
+                
+                for (int i=0; i < leftChampions.count; i++) {
+                    
+                    unsigned int star = ((SSurreal*)[leftChampions objectAtIndex:i]).value.getStar();
+                    
+                    if (star != lastStar + 1) {
+                        
+                        value = Nimber::makeNimber(0, lastStar + 1, 0);
+                        
+                        return hasValue = YES;
+                        
+                    }
+                    
+                    lastStar = star;
+                    
+                }
+                
+                value = Nimber::makeNimber(0, lastStar + 1, 0);
+                
+                return hasValue = YES;
+                
             }
             
         }
         
     }
+    
+    hasValue = NO;
     
     return NO;
     

@@ -82,7 +82,7 @@ bool Nimber::operator>= (Nimber nim) {
 
 bool Nimber::operator<= (Nimber nim) {
     
-    return *this > nim || *this == nim;
+    return *this < nim || *this == nim;
     
 }
 

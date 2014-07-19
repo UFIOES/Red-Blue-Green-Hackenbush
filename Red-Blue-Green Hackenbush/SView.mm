@@ -208,7 +208,7 @@ SSurreal* computeValue(NSMutableArray* remainingLines, NSMutableArray* remaining
     
 }
 
-- (void)findValue {
+- (double)findValue {
     
     NSMutableArray* __block links = [NSMutableArray array];
     
@@ -288,7 +288,7 @@ SSurreal* computeValue(NSMutableArray* remainingLines, NSMutableArray* remaining
     
     if ([value analyzeValue]) {
         
-        printf("%f\n", value.value.getReal());
+        printf("%f + *%u\n", value.value.getReal(), value.value.getStar());
         
     } else {
         
@@ -296,7 +296,7 @@ SSurreal* computeValue(NSMutableArray* remainingLines, NSMutableArray* remaining
         
     }
     
-    [self setNeedsDisplay];
+    return value.value.getReal();
     
 }
 

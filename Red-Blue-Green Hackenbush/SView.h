@@ -50,4 +50,6 @@
 
 - (void)maximumDelete;
 
+- (double)findValue;
+
 @end

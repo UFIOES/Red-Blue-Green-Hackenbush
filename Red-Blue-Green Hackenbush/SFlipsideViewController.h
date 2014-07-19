@@ -42,8 +42,10 @@
 
 @property (strong, nonatomic) IBOutlet UISlider *snapRange;
 
+@property (strong, nonatomic) IBOutlet UILabel *output;
+
 - (IBAction)done:(UISegmentedControl*)sender;
 
-- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange;
+- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange outputValue:(double)value;
 
 @end
