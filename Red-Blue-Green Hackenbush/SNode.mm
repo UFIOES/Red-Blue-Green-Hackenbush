@@ -16,6 +16,8 @@
 
 @synthesize numLinks;
 
+@synthesize links;
+
 //Sets the node's number, used for checking connectivity to the ground
 - (void)setNumber:(int)n {
     
@@ -62,9 +64,7 @@
 //used to recursively assign numbers to linked nodes, initiate call on ground nodes only, used to check connectivity to the ground
 - (void)assignNumbersToLinks {
     
-    [links enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        
-        SNode* node = ((SNode*) obj);
+    for (SNode* node in links) {
         
         if ((node.number < 0 || node.number > self.number + 1) && self.number >= 0) {
             
@@ -74,10 +74,9 @@
             
         }
         
-    }];
+    }
     
 }
-
 //designate a ground node
 - (void)setGroundNode {
     
@@ -106,6 +105,22 @@
     node->links = [NSMutableArray array];
     
     node->numLinks = 0;
+    
+    return node;
+    
+}
+
+- (id)clone {
+    
+    SNode* __block node = [SNode makeWithPoint:point];
+    
+    [links enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        [node addLink:obj];
+        
+    }];
+    
+    if (groundNode) [node setGroundNode];
     
     return node;
     

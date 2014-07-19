@@ -31,4 +31,16 @@
     
 }
 
+- (BOOL)hasGroundNode {
+    
+    if (startNode.isGroundNode || endNode.isGroundNode) {
+        
+        return YES;
+        
+    }
+    
+    return NO;
+    
+}
+
 @end

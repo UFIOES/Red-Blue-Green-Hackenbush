@@ -35,4 +35,6 @@ typedef enum : NSUInteger {
 
 + (id)makeWithColor:(lineColor)c startNode:(SNode*)n1 endNode:(SNode*)n2;
 
+- (BOOL)hasGroundNode;
+
 @end

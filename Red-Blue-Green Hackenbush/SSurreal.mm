@@ -14,25 +14,9 @@
 
 @synthesize right;
 
-class Nimber {
-    
-    double real = 0; // real part
-    
-    double star = 0; // star part: *0, *1, *2, etc...
-    
-    double bigStar = 0; // larger fuzzy part: ±1/2, ±1, ±2, etc...
-    
-public:
-    
-    Nimber(double r, double s, double bS) {
-        
-        real = r;
-        star = s;
-        bS = bS;
-        
-    }
-    
-};
+@synthesize value;
+
+@synthesize hasValue;
 
 + (id)makeWithLeftArray:(NSArray*)leftArray rightArray:(NSArray*)rightArray {
     
@@ -42,7 +26,71 @@ public:
     
     surreal->right = [NSMutableArray arrayWithArray:rightArray];
     
+    surreal->value = new Nimber(0, 0, 0);
+    
     return surreal;
+    
+}
+
+- (BOOL)analyzeValue {
+    
+    if (left.count == 0 && right.count == 0) {
+        
+        value = new Nimber(0,0,0);
+        
+        return YES;
+        
+    } else if (left.count == 0 && right.count == 1) {
+        
+        for (SSurreal* surreal in right) {
+            
+            if (surreal.hasValue) {
+                
+                value = surreal.value + 1;
+                
+                return YES;
+                
+            } else {
+                
+                if ([surreal analyzeValue]) {
+                    
+                    value = surreal.value + 1;
+                    
+                    return YES;
+                    
+                }
+                
+            }
+            
+        }
+        
+    } else if (left.count == 1 && right.count == 0) {
+        
+        for (SSurreal* surreal in left) {
+            
+            if (surreal.hasValue) {
+                
+                value = surreal.value - 1;
+                
+                return YES;
+                
+            } else {
+                
+                if ([surreal analyzeValue]) {
+                    
+                    value = surreal.value + 1;
+                    
+                    return YES;
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    return NO;
     
 }
 

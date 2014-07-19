@@ -26,7 +26,9 @@
 
 @property (nonatomic) int number;
 
-@property (readonly) int numLinks;
+@property int numLinks;
+
+@property NSMutableArray* links;
 
 - (void)setNumber:(int)n;
 
@@ -41,5 +43,7 @@
 - (void)assignNumbersToLinks;
 
 + (id)makeWithPoint:(CGPoint)p;
+
+- (id)clone;
 
 @end

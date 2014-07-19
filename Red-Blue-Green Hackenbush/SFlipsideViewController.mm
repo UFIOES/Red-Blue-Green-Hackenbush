@@ -55,7 +55,7 @@
 //change the color of created lines
 - (IBAction)changeColor:(UISegmentedControl*)sender {
     
-    [_delegate changeColor:sender.selectedSegmentIndex];
+    [_delegate changeColor:(lineColor) sender.selectedSegmentIndex];
     
 }
 

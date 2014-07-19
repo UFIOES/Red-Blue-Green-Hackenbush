@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2200CB1119799C0100A33C78 /* Nimber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2200CB0F19799C0100A33C78 /* Nimber.cpp */; };
 		2201BEE71953C1FF008D6C4B /* SLine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2201BEE61953C1FF008D6C4B /* SLine.mm */; };
-		2283E4C01979626400E30F2F /* SMath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2283E4BF1979626400E30F2F /* SMath.mm */; };
 		2283E4C3197962A600E30F2F /* SSurreal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2283E4C2197962A600E30F2F /* SSurreal.mm */; };
 		22AF86F91953851500B3FC72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86F81953851500B3FC72 /* Foundation.framework */; };
 		22AF86FB1953851500B3FC72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86FA1953851500B3FC72 /* CoreGraphics.framework */; };
 		22AF86FD1953851500B3FC72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86FC1953851500B3FC72 /* UIKit.framework */; };
 		22AF87031953851500B3FC72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22AF87011953851500B3FC72 /* InfoPlist.strings */; };
-		22AF87051953851500B3FC72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87041953851500B3FC72 /* main.m */; };
+		22AF87051953851500B3FC72 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87041953851500B3FC72 /* main.mm */; };
 		22AF87091953851500B3FC72 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87081953851500B3FC72 /* SAppDelegate.m */; };
 		22AF870C1953851500B3FC72 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AF870A1953851500B3FC72 /* Main_iPhone.storyboard */; };
 		22AF870F1953851500B3FC72 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AF870D1953851500B3FC72 /* Main_iPad.storyboard */; };
-		22AF87121953851500B3FC72 /* SMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87111953851500B3FC72 /* SMainViewController.m */; };
-		22AF87151953851500B3FC72 /* SFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87141953851500B3FC72 /* SFlipsideViewController.m */; };
+		22AF87121953851500B3FC72 /* SMainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87111953851500B3FC72 /* SMainViewController.mm */; };
+		22AF87151953851500B3FC72 /* SFlipsideViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22AF87141953851500B3FC72 /* SFlipsideViewController.mm */; };
 		22AF87171953851500B3FC72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AF87161953851500B3FC72 /* Images.xcassets */; };
 		22AF871E1953851500B3FC72 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF871D1953851500B3FC72 /* XCTest.framework */; };
 		22AF871F1953851500B3FC72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF86F81953851500B3FC72 /* Foundation.framework */; };
@@ -41,10 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2200CB0F19799C0100A33C78 /* Nimber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nimber.cpp; sourceTree = "<group>"; };
+		2200CB1019799C0100A33C78 /* Nimber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nimber.h; sourceTree = "<group>"; };
 		2201BEE61953C1FF008D6C4B /* SLine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SLine.mm; sourceTree = "<group>"; };
 		2201BEE81953C210008D6C4B /* SLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLine.h; sourceTree = "<group>"; };
-		2283E4BE1979626400E30F2F /* SMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMath.h; sourceTree = "<group>"; };
-		2283E4BF1979626400E30F2F /* SMath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SMath.mm; sourceTree = "<group>"; };
 		2283E4C1197962A600E30F2F /* SSurreal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSurreal.h; sourceTree = "<group>"; };
 		2283E4C2197962A600E30F2F /* SSurreal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SSurreal.mm; sourceTree = "<group>"; };
 		22AF86F51953851500B3FC72 /* Hackenbush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackenbush.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,16 +53,16 @@
 		22AF86FC1953851500B3FC72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22AF87001953851500B3FC72 /* Hackenbush-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hackenbush-Info.plist"; sourceTree = "<group>"; };
 		22AF87021953851500B3FC72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		22AF87041953851500B3FC72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		22AF87041953851500B3FC72 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		22AF87061953851500B3FC72 /* Hackenbush-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackenbush-Prefix.pch"; sourceTree = "<group>"; };
 		22AF87071953851500B3FC72 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAppDelegate.h; sourceTree = "<group>"; };
 		22AF87081953851500B3FC72 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAppDelegate.m; sourceTree = "<group>"; };
 		22AF870B1953851500B3FC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		22AF870E1953851500B3FC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		22AF87101953851500B3FC72 /* SMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMainViewController.h; sourceTree = "<group>"; };
-		22AF87111953851500B3FC72 /* SMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMainViewController.m; sourceTree = "<group>"; };
+		22AF87111953851500B3FC72 /* SMainViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SMainViewController.mm; sourceTree = "<group>"; };
 		22AF87131953851500B3FC72 /* SFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFlipsideViewController.h; sourceTree = "<group>"; };
-		22AF87141953851500B3FC72 /* SFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFlipsideViewController.m; sourceTree = "<group>"; };
+		22AF87141953851500B3FC72 /* SFlipsideViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SFlipsideViewController.mm; sourceTree = "<group>"; };
 		22AF87161953851500B3FC72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22AF871C1953851500B3FC72 /* HackenbushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackenbushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AF871D1953851500B3FC72 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -134,11 +134,11 @@
 			children = (
 				22AF87071953851500B3FC72 /* SAppDelegate.h */,
 				22AF87081953851500B3FC72 /* SAppDelegate.m */,
-				2283E4BE1979626400E30F2F /* SMath.h */,
-				2283E4BF1979626400E30F2F /* SMath.mm */,
-				22AF87381953900100B3FC72 /* SView.h */,
+				2200CB1019799C0100A33C78 /* Nimber.h */,
+				2200CB0F19799C0100A33C78 /* Nimber.cpp */,
 				2283E4C1197962A600E30F2F /* SSurreal.h */,
 				2283E4C2197962A600E30F2F /* SSurreal.mm */,
+				22AF87381953900100B3FC72 /* SView.h */,
 				22AF87391953900100B3FC72 /* SView.mm */,
 				22CC9431195622D4005A7651 /* SNode.h */,
 				22CC9432195622D4005A7651 /* SNode.mm */,
@@ -147,9 +147,9 @@
 				22AF870A1953851500B3FC72 /* Main_iPhone.storyboard */,
 				22AF870D1953851500B3FC72 /* Main_iPad.storyboard */,
 				22AF87101953851500B3FC72 /* SMainViewController.h */,
-				22AF87111953851500B3FC72 /* SMainViewController.m */,
+				22AF87111953851500B3FC72 /* SMainViewController.mm */,
 				22AF87131953851500B3FC72 /* SFlipsideViewController.h */,
-				22AF87141953851500B3FC72 /* SFlipsideViewController.m */,
+				22AF87141953851500B3FC72 /* SFlipsideViewController.mm */,
 				22AF87161953851500B3FC72 /* Images.xcassets */,
 				22AF86FF1953851500B3FC72 /* Supporting Files */,
 			);
@@ -162,7 +162,7 @@
 			children = (
 				22AF87001953851500B3FC72 /* Hackenbush-Info.plist */,
 				22AF87011953851500B3FC72 /* InfoPlist.strings */,
-				22AF87041953851500B3FC72 /* main.m */,
+				22AF87041953851500B3FC72 /* main.mm */,
 				22AF87061953851500B3FC72 /* Hackenbush-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -288,13 +288,13 @@
 			files = (
 				22AF873A1953900100B3FC72 /* SView.mm in Sources */,
 				22CC9433195622D4005A7651 /* SNode.mm in Sources */,
-				22AF87121953851500B3FC72 /* SMainViewController.m in Sources */,
+				22AF87121953851500B3FC72 /* SMainViewController.mm in Sources */,
 				22AF87091953851500B3FC72 /* SAppDelegate.m in Sources */,
+				2200CB1119799C0100A33C78 /* Nimber.cpp in Sources */,
 				2201BEE71953C1FF008D6C4B /* SLine.mm in Sources */,
-				2283E4C01979626400E30F2F /* SMath.mm in Sources */,
 				2283E4C3197962A600E30F2F /* SSurreal.mm in Sources */,
-				22AF87151953851500B3FC72 /* SFlipsideViewController.m in Sources */,
-				22AF87051953851500B3FC72 /* main.m in Sources */,
+				22AF87151953851500B3FC72 /* SFlipsideViewController.mm in Sources */,
+				22AF87051953851500B3FC72 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

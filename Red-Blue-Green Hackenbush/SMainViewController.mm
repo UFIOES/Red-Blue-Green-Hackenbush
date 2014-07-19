@@ -48,7 +48,7 @@
         
         self.view.editingMode = YES;
         
-        self.view.color = sender.selectedSegmentIndex;
+        self.view.color = (lineColor) sender.selectedSegmentIndex;
         
     }
     

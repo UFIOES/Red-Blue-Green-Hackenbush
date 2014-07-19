@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "SLine.h"
-
 #import "SNode.h"
+#import "SSurreal.h"
 
 @interface SView : UIView {
     
@@ -33,6 +33,8 @@
     BOOL editingMode;
     
     float nodeSnapRange;
+    
+    SSurreal* value;
     
 }
 
