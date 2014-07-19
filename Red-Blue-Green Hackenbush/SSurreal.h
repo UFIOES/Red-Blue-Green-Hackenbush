@@ -34,5 +34,7 @@
 
 - (BOOL)analyzeValue;
 
+- (NSString*)toString;
+
 @end
 

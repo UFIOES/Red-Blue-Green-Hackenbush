@@ -188,6 +188,8 @@ Nimber simplestNimber(Nimber leftNimber, Nimber rightNimber) {
             
         } else {
             
+            left = champions;
+            
             return NO;
             
         }
@@ -229,6 +231,8 @@ Nimber simplestNimber(Nimber leftNimber, Nimber rightNimber) {
             return YES;
             
         } else {
+            
+            right = champions;
             
             return NO;
             
@@ -287,6 +291,10 @@ Nimber simplestNimber(Nimber leftNimber, Nimber rightNimber) {
             }
             
         }
+        
+        left = leftChampions;
+        
+        right = rightChampions;
         
         if (leftChampions.count == 1 && rightChampions.count == 1) {
             
@@ -404,6 +412,118 @@ Nimber simplestNimber(Nimber leftNimber, Nimber rightNimber) {
     hasValue = NO;
     
     return NO;
+    
+}
+
+- (NSString*)toString {
+    
+    NSString* string = @"{";
+    
+    for (SSurreal* surreal in left) {
+        
+        if (surreal.hasValue) {
+            
+            NSString* substring = @"0";
+            
+            double realValue = surreal.value.getReal();
+            
+            unsigned int starValue = surreal.value.getStar();
+            
+            if (realValue != 0) {
+                
+                substring = [NSString stringWithFormat:@"%.*f", 12, realValue];
+                
+                unsigned long i = substring.length - 1;
+                
+                while (YES) {
+                    
+                    if ([substring characterAtIndex:i] != '0' || [substring characterAtIndex:i] == '.') break;
+                    
+                    i--;
+                    
+                }
+                
+                substring = [substring substringToIndex:i+1];
+                
+                if (starValue != 0) {
+                    
+                    substring = [substring stringByAppendingString:[NSString stringWithFormat:@"+*%u", starValue]];
+                    
+                }
+                
+            } else if (starValue != 0) {
+                
+                substring = [NSString stringWithFormat:@"*%u", starValue ];
+                
+            }
+            
+            string = [string stringByAppendingString:[NSString stringWithFormat:@"%@,", substring]];
+            
+        } else {
+            
+            string = [string stringByAppendingString:[NSString stringWithFormat:@"%@,", [surreal toString]]];
+            
+        }
+        
+    }
+    
+    string = [string substringToIndex:string.length - 1];
+    
+    string = [string stringByAppendingString:@"|"];
+    
+    for (SSurreal* surreal in right) {
+        
+        if (surreal.hasValue) {
+            
+            NSString* substring = @"0";
+            
+            double realValue = surreal.value.getReal();
+            
+            unsigned int starValue = surreal.value.getStar();
+            
+            if (realValue != 0) {
+                
+                substring = [NSString stringWithFormat:@"%.*f", 12, realValue];
+                
+                unsigned long i = substring.length - 1;
+                
+                while (YES) {
+                    
+                    if ([substring characterAtIndex:i] != '0' || [substring characterAtIndex:i] == '.') break;
+                    
+                    i--;
+                    
+                }
+                
+                substring = [substring substringToIndex:i+1];
+                
+                if (starValue != 0) {
+                    
+                    substring = [substring stringByAppendingString:[NSString stringWithFormat:@"+*%u", starValue]];
+                    
+                }
+                
+            } else if (starValue != 0) {
+                
+                substring = [NSString stringWithFormat:@"*%u", starValue ];
+                
+            }
+            
+            string = [string stringByAppendingString:[NSString stringWithFormat:@"%@,", substring]];
+            
+        } else {
+            
+            string = [string stringByAppendingString:[NSString stringWithFormat:@"%@,", [surreal toString]]];
+            
+        }
+        
+    }
+    
+    string = [string substringToIndex:string.length - 1];
+    
+    string = [string stringByAppendingString:@"}"];
+    
+    return string;
     
 }
 

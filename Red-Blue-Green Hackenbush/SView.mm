@@ -18,6 +18,8 @@
 
 @synthesize nodeSnapRange;
 
+@synthesize value;
+
 - (id)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
@@ -208,7 +210,7 @@ SSurreal* computeValue(NSMutableArray* remainingLines, NSMutableArray* remaining
     
 }
 
-- (double)findValue {
+- (SSurreal*)findValue {
     
     NSMutableArray* __block links = [NSMutableArray array];
     
@@ -296,7 +298,7 @@ SSurreal* computeValue(NSMutableArray* remainingLines, NSMutableArray* remaining
         
     }
     
-    return value.value.getReal();
+    return value;
     
 }
 

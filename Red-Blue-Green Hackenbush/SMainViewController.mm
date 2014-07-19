@@ -111,9 +111,9 @@
     
     float snapRange = self.view.nodeSnapRange;
     
-    double value = [self.view findValue];
+    SSurreal* surreal = [self.view findValue];
     
-    [receiver restoreStateWithColor:color editingMode:editing childishMode:childish nodeSnapRange:snapRange outputValue:value];
+    [receiver restoreStateWithColor:color editingMode:editing childishMode:childish nodeSnapRange:snapRange outputSurreal:surreal];
     
 }
 

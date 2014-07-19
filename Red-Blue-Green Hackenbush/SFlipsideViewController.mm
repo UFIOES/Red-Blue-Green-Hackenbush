@@ -29,7 +29,7 @@
 }
 
 //used to make sure the settings pane defaults to the correct state instead of the default
-- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange outputValue:(double)value {
+- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange outputSurreal:(SSurreal*)surreal {
     
     _colorControl.selectedSegmentIndex = color;
     
@@ -39,19 +39,49 @@
     
     [_snapRange setValue:snapRange];
     
-    NSString* string = [NSString stringWithFormat:@"%.*f", 12, value];
+    NSString* string = @"ERROR";
     
-    unsigned long i = string.length - 1;
-    
-    while (YES) {
+    if (!surreal.hasValue) {
         
-        if ([string characterAtIndex:i] != '0') break;
+        string = [surreal toString];
         
-        i--;
+    } else {
+        
+        string = @"0";
+        
+        double realValue = surreal.value.getReal();
+        
+        unsigned int starValue = surreal.value.getStar();
+        
+        if (realValue != 0) {
+            
+            string = [NSString stringWithFormat:@"%.*f", 12, realValue];
+            
+            unsigned long i = string.length - 1;
+            
+            while (YES) {
+                
+                if ([string characterAtIndex:i] != '0' || [string characterAtIndex:i] == '.') break;
+                
+                i--;
+                
+            }
+            
+            string = [string substringToIndex:i+1];
+            
+            if (starValue != 0) {
+                
+                string = [string stringByAppendingString:[NSString stringWithFormat:@" + *%u", starValue]];
+                
+            }
+            
+        } else if (starValue != 0) {
+            
+            string = [NSString stringWithFormat:@"*%u", starValue];
+            
+        }
         
     }
-    
-    string = [string substringToIndex:i+1];
     
     [_output setText:string];
     

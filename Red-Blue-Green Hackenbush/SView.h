@@ -46,10 +46,12 @@
 
 @property float nodeSnapRange;
 
+@property (readonly) SSurreal* value;
+
 - (id)initWithFrame:(CGRect)frame;
 
 - (void)maximumDelete;
 
-- (double)findValue;
+- (SSurreal*)findValue;
 
 @end

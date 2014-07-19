@@ -46,6 +46,6 @@
 
 - (IBAction)done:(UISegmentedControl*)sender;
 
-- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange outputValue:(double)value;
+- (void)restoreStateWithColor:(lineColor)color editingMode:(BOOL)editing childishMode:(BOOL)childish nodeSnapRange:(float)snapRange outputSurreal:(SSurreal*)surreal;
 
 @end
