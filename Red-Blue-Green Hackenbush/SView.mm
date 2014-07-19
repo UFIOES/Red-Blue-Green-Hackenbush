@@ -83,37 +83,98 @@ BOOL lineSegmentsIntersect(SLine* l1, SLine* l2) {
     
 }
 
+NSArray* copyEverything(NSMutableArray* remainingLines, SLine* linkedLine) {
+    
+    NSMutableArray* output = [NSMutableArray array];
+    NSMutableArray* newLines = [NSMutableArray array];
+    NSMutableArray* nodeList = [NSMutableArray array];
+    NSMutableArray* newNodes = [NSMutableArray array];
+    NSMutableArray* newGroundNodes = [NSMutableArray array];
+    
+    [remainingLines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        SLine* line = (SLine*) obj;
+        
+        if (![nodeList containsObject:line.startNode]) {
+            
+            [nodeList addObject:line.startNode];
+            
+            SNode* node = [line.startNode clone];
+            
+            node.links = [NSMutableArray array];
+            
+            node.numLinks = 0;
+            
+            [nodeList addObject:node];
+            
+            [newNodes addObject:node];
+            
+            if (node.isGroundNode) [newGroundNodes addObject:node];
+            
+        }
+        
+        if (![nodeList containsObject:line.endNode]) {
+            
+            [nodeList addObject:line.endNode];
+            
+            SNode* node = [line.endNode clone];
+            
+            node.links = [NSMutableArray array];
+            
+            node.numLinks = 0;
+            
+            [nodeList addObject:node];
+            
+            [newNodes addObject:node];
+            
+            if (node.isGroundNode) [newGroundNodes addObject:node];
+            
+        }
+        
+        SLine* newLine = [SLine makeWithColor:line.color
+                                    startNode:[nodeList objectAtIndex:[nodeList indexOfObject:line.startNode] + 1]
+                                      endNode:[nodeList objectAtIndex:[nodeList indexOfObject:line.endNode] + 1]];
+        
+        [newLine.startNode addLink:newLine.endNode];
+        [newLine.endNode addLink:newLine.startNode];
+        
+        if (line == linkedLine) {
+            
+            [output addObject:newLine];
+            
+        }
+        
+        [newLines addObject:newLine];
+        
+    }];
+    
+    [output addObject:newLines];
+    [output addObject:newNodes];
+    [output addObject:newGroundNodes];
+    
+    return output.copy;
+    
+}
+
 SSurreal* computeValue(NSMutableArray* remainingLines, NSMutableArray* remainingNodes, NSMutableArray* remainingGroundNodes) {
     
     NSMutableArray* left = [NSMutableArray array];
     
     NSMutableArray* right = [NSMutableArray array];
     
-    [remainingLines enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [remainingLines enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
         SLine* line = (SLine*) obj;
         
-        NSMutableArray* __block remainingLines2 = remainingLines.mutableCopy;
+        NSArray* copy = copyEverything(remainingLines, line);
         
-        NSMutableArray* __block remainingNodes2 = [NSMutableArray array];
+        line = [copy objectAtIndex:0];
         
-        [remainingNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
-            SNode* node = (SNode*) obj;
-            
-            [remainingNodes2 addObject:[node clone]];
-            
-        }];
+        NSMutableArray* __block remainingLines2 = [copy objectAtIndex:1];
         
-        NSMutableArray* __block remainingGroundNodes2 = [NSMutableArray array];
+        NSMutableArray* __block remainingNodes2 = [copy objectAtIndex:2];
         
-        [remainingGroundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
-            SNode* node = (SNode*) obj;
-            
-            [remainingGroundNodes2 addObject:[node clone]];
-            
-        }];
+        NSMutableArray* __block remainingGroundNodes2 = [copy objectAtIndex:3];
         
         switch (line.color) {
             case blue:
@@ -171,27 +232,15 @@ SSurreal* computeValue(NSMutableArray* remainingLines, NSMutableArray* remaining
         
         SLine* line = (SLine*) obj;
         
-        NSMutableArray* __block remainingLines = lines.mutableCopy;
+        NSArray* copy = copyEverything(lines, line);
         
-        NSMutableArray* __block remainingNodes = [NSMutableArray array];
+        line = [copy objectAtIndex:0];
         
-        [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
-            SNode* node = (SNode*) obj;
-            
-            [remainingNodes addObject:[node clone]];
-            
-        }];
+        NSMutableArray* __block remainingLines = [copy objectAtIndex:1];
         
-        NSMutableArray* __block remainingGroundNodes = [NSMutableArray array];
+        NSMutableArray* __block remainingNodes = [copy objectAtIndex:2];
         
-        [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
-            SNode* node = (SNode*) obj;
-            
-            [remainingGroundNodes addObject:[node clone]];
-            
-        }];
+        NSMutableArray* __block remainingGroundNodes = [copy objectAtIndex:3];
         
         switch (line.color) {
             case blue:
@@ -350,8 +399,6 @@ void cutLine(SLine* line, NSMutableArray* lines, NSMutableArray* allNodes, NSMut
         
         NSMutableArray* __block deadNodes = [NSMutableArray arrayWithCapacity:allNodes.count];
         
-        printf("%lu\n", (unsigned long) deadNodes.count);
-        
         [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //if there are any nodes still with -1, they must not connect to the ground, they are dead
             
             SNode* node = ((SNode*) obj);
@@ -363,8 +410,6 @@ void cutLine(SLine* line, NSMutableArray* lines, NSMutableArray* allNodes, NSMut
             }
             
         }];
-        
-        printf("%lu\n", (unsigned long) deadNodes.count);
         
         [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //check for dead ground nodes, as they allways have connectivity to the ground and are only are destroyed by having all connecting lines cut
             

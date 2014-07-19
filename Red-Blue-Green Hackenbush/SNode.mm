@@ -114,11 +114,9 @@
     
     SNode* __block node = [SNode makeWithPoint:point];
     
-    [links enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        
-        [node addLink:obj];
-        
-    }];
+    node.links = [NSMutableArray arrayWithArray:links];
+    
+    node.numLinks = numLinks;
     
     if (groundNode) [node setGroundNode];
     

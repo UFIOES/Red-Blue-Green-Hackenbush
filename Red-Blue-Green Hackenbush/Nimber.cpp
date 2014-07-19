@@ -29,9 +29,7 @@ Nimber::Nimber(double r, double s, double bS) {
 
 Nimber* Nimber::operator+ (Nimber nim) {
     
-    Nimber* result = new Nimber(real + nim.real, star xor nim.star, bigStar > nim.bigStar ? bigStar - nim.bigStar : nim.bigStar - bigStar);
-    
-    return result;
+    return new Nimber(real + nim.real, star xor nim.star, bigStar > nim.bigStar ? bigStar - nim.bigStar : nim.bigStar - bigStar);
     
 }
 
@@ -86,7 +84,7 @@ bool Nimber::operator<= (Nimber nim) {
 
 bool Nimber::operator| (Nimber nim) { // fuzzy operator, e.g. star is fuzzy with zero
     
-    if (!(*this == nim && *this > nim && *this < nim)) {
+    if (!(*this == nim) && !(*this > nim) && !(*this < nim)) {
         
         return true;
         

@@ -34,57 +34,135 @@
 
 - (BOOL)analyzeValue {
     
+    [left enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        SSurreal* surreal = (SSurreal*) obj;
+        
+        if (!surreal.hasValue) {
+            
+            [surreal analyzeValue];
+            
+        }
+        
+    }];
+    
+    [right enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        SSurreal* surreal = (SSurreal*) obj;
+        
+        if (!surreal.hasValue) {
+            
+            [surreal analyzeValue];
+            
+        }
+        
+    }];
+    
     if (left.count == 0 && right.count == 0) {
         
         value = new Nimber(0,0,0);
+        
+        hasValue = YES;
+        
+        return YES;
+        
+    } else if (left.count == 1 && right.count == 0) {
+        
+        value = *((SSurreal*) left.firstObject).value + *new Nimber(1,0,0);
+        
+        hasValue = YES;
         
         return YES;
         
     } else if (left.count == 0 && right.count == 1) {
         
-        for (SSurreal* surreal in right) {
+        value = *((SSurreal*) right.firstObject).value + *new Nimber(-1,0,0);
+        
+        hasValue = YES;
+        
+        return YES;
+        
+    } else if (right.count == 0) {
+        
+        SSurreal* champion = [left firstObject];
+        
+        NSMutableArray* champions = [NSMutableArray array];
+        
+        for (SSurreal* surreal in left) { //finds the largest value in left, if the values is fuzzy, finds the first
             
-            if (surreal.hasValue) {
+            if (*champion.value < *surreal.value) {
                 
-                value = surreal.value + 1;
-                
-                return YES;
-                
-            } else {
-                
-                if ([surreal analyzeValue]) {
-                    
-                    value = surreal.value + 1;
-                    
-                    return YES;
-                    
-                }
+                champion = surreal;
                 
             }
             
         }
         
-    } else if (left.count == 1 && right.count == 0) {
+        [champions addObject:champion];
         
         for (SSurreal* surreal in left) {
             
-            if (surreal.hasValue) {
+            if (*champion.value | *surreal.value) {
                 
-                value = surreal.value - 1;
-                
-                return YES;
-                
-            } else {
-                
-                if ([surreal analyzeValue]) {
-                    
-                    value = surreal.value + 1;
-                    
-                    return YES;
-                    
-                }
+                [champions addObject:surreal];
                 
             }
+            
+        }
+        
+        if (champions.count == 1) {
+            
+            value = *champion.value + *new Nimber(1,0,0);
+            
+            hasValue = YES;
+            
+            return YES;
+            
+        } else {
+            
+            return NO;
+            
+        }
+        
+    } else if (left.count == 0) {
+        
+        SSurreal* champion = [right firstObject];
+        
+        NSMutableArray* champions = [NSMutableArray array];
+        
+        for (SSurreal* surreal in right) { //finds the smallest value in right, if the values is fuzzy, finds the first
+            
+            if (champion.value > surreal.value) {
+                
+                champion = surreal;
+                
+            }
+            
+        }
+        
+        [champions addObject:champion];
+        
+        for (SSurreal* surreal in right) {
+            
+            if (*champion.value | *surreal.value) {
+                
+                [champions addObject:surreal];
+                
+            }
+            
+        }
+        
+        if (champions.count == 1) {
+            
+            value = *champion.value + *new Nimber(-1,0,0);
+            
+            hasValue = YES;
+            
+            return YES;
+            
+        } else {
+            
+            return NO;
             
         }
         
