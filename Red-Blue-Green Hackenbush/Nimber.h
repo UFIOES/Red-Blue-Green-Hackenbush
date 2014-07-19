@@ -23,13 +23,13 @@ class Nimber {
     
 private:
     
-    Nimber();
-    
 public:
     
-    Nimber(double r, double s, double bS);
+    Nimber();
     
-    Nimber* operator+ (Nimber nim);
+    static Nimber makeNimber(double r, double s, double bS);
+    
+    Nimber operator+ (Nimber nim);
     
     bool operator== (Nimber nim);
     bool operator> (Nimber nim);
@@ -39,5 +39,7 @@ public:
     bool operator| (Nimber nim);
     
     double getReal();
+    unsigned int getStar();
+    unsigned int getBigStar();
     
 };

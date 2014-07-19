@@ -18,18 +18,22 @@ Nimber::Nimber() {
     
 }
 
-Nimber::Nimber(double r, double s, double bS) {
+ Nimber Nimber::makeNimber(double r, double s, double bS) {
     
-    real = r;
-    star = s; // star must be unsigned
-    bigStar = bS; // bigStar must be unsigned
+    Nimber nimber = *new Nimber();
+    
+    nimber.real = r;
+    nimber.star = s; // star must be unsigned
+    nimber.bigStar = bS; // bigStar must be unsigned
+    
+    return nimber;
     
 }
 
 
-Nimber* Nimber::operator+ (Nimber nim) {
+Nimber Nimber::operator+ (Nimber nim) {
     
-    return new Nimber(real + nim.real, star xor nim.star, bigStar > nim.bigStar ? bigStar - nim.bigStar : nim.bigStar - bigStar);
+    return makeNimber(real + nim.real, star xor nim.star, bigStar > nim.bigStar ? bigStar - nim.bigStar : nim.bigStar - bigStar);
     
 }
 
@@ -97,6 +101,18 @@ bool Nimber::operator| (Nimber nim) { // fuzzy operator, e.g. star is fuzzy with
 double Nimber::getReal() {
     
     return real;
+    
+}
+
+unsigned int Nimber::getStar() {
+    
+    return star;
+    
+}
+
+unsigned int Nimber::getBigStar() {
+    
+    return bigStar;
     
 }
 

@@ -18,7 +18,7 @@
     
     BOOL hasValue;
     
-    Nimber* value;
+    Nimber value;
     
 }
 
@@ -26,7 +26,7 @@
 
 @property NSMutableArray* right;
 
-@property (readonly) Nimber* value;
+@property (readonly) Nimber value;
 
 @property BOOL hasValue;
 

@@ -288,7 +288,7 @@ SSurreal* computeValue(NSMutableArray* remainingLines, NSMutableArray* remaining
     
     if ([value analyzeValue]) {
         
-        printf("%f\n", value.value->getReal());
+        printf("%f\n", value.value.getReal());
         
     } else {
         
@@ -399,7 +399,7 @@ void cutLine(SLine* line, NSMutableArray* lines, NSMutableArray* allNodes, NSMut
         
         NSMutableArray* __block deadNodes = [NSMutableArray arrayWithCapacity:allNodes.count];
         
-        [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //if there are any nodes still with -1, they must not connect to the ground, they are dead
+        [allNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //if there are any nodes still with -1, they are dead
             
             SNode* node = ((SNode*) obj);
             
@@ -411,7 +411,7 @@ void cutLine(SLine* line, NSMutableArray* lines, NSMutableArray* allNodes, NSMut
             
         }];
         
-        [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //check for dead ground nodes, as they allways have connectivity to the ground and are only are destroyed by having all connecting lines cut
+        [groundNodes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { //check for dead ground nodes, as they allways have connectivity to the ground and are only are 'destroyed' by having all connecting lines cut
             
             SNode* node = (SNode*) obj;
             
